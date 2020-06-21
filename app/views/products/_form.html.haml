@@ -1,0 +1,11 @@
+= form_with model: product, local: true do |f|
+  = f.label :サイト名
+  = f.text_field :name
+  %br
+  = f.label :料金
+  = f.number_field :price
+  %br
+  = f.label :詳細
+  = f.text_area :content
+  %br
+  = f.submit "登録"
