@@ -1,0 +1,16 @@
+%h1 index画面
+= link_to new_product_path do
+  新規作成
+.content
+  - @products.each do |product|
+    .content__row
+      = product.name
+      = product.price
+      = product.content
+      = link_to product_path(product) do
+        詳細画面
+      = link_to edit_product_path(product) do
+        編集画面
+      = link_to product_path(product), method: :delete do
+        削除
+      %br

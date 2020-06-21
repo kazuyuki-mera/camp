@@ -1,0 +1,4 @@
+%h1 edit画面
+= link_to products_path do
+  一覧へ
+= render partial: 'form', locals: { product: @product }
