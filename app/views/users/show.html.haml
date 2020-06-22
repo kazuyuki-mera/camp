@@ -1,0 +1,11 @@
+%h1 ユーザーshow画面
+.row
+  = @user.full_name
+  = @user.full_name_kana
+.row
+  = link_to edit_user_registration_path do
+    編集
+  = link_to user_registration_path, method: :delete do
+    削除
+  = link_to products_path do
+    商品一覧へ
