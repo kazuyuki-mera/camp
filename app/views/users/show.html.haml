@@ -9,3 +9,11 @@
     削除
   = link_to products_path do
     商品一覧へ
+%h1 予約一覧
+- @reservations.each do |reservation|
+  = link_to product_reservation_path(reservation.product, reservation) do
+    = reservation.product.name
+  = reservation.id
+  = reservation.start_date
+  = reservation.end_date
+  %br

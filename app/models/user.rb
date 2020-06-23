@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable
   
+  # アソシエーション
+  has_many :reservations
+  
   def full_name
     self.name_sei + self.name_mei
   end
