@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_105056) do
+ActiveRecord::Schema.define(version: 2020_06_22_112849) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "商品", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "商品名"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2020_06_21_105056) do
     t.text "content", comment: "商品詳細"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "予約表", force: :cascade do |t|
+    t.bigint "product_id", comment: "商品ID"
+    t.bigint "user_id", comment: "ユーザーID"
+    t.date "start_date", null: false, comment: "宿泊開始日"
+    t.date "end_date", null: false, comment: "宿泊終了日"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reservations_on_product_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "ユーザー", force: :cascade do |t|
@@ -41,4 +52,6 @@ ActiveRecord::Schema.define(version: 2020_06_21_105056) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reservations", "products"
+  add_foreign_key "reservations", "users"
 end
