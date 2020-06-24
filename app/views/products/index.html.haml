@@ -2,16 +2,16 @@
   - @top_images.each do |image|
     .slick-content
       = image_tag "#{image}", alt: "トップイメージ"
-.content
-  - @products.each do |product|
-    .content__row
-      = product.name
-      = product.price
-      = product.content
-      = link_to product_path(product) do
-        詳細画面
-      = link_to edit_product_path(product) do
-        編集画面
-      = link_to product_path(product), method: :delete do
-        削除
-      %br
+.products
+  .products__heading
+    キャンプ場一覧
+  .products__contents
+    - @products.each do |product|
+      = link_to product_path(product), class: 'card' do
+        .card__top
+          = image_tag "#{@top_images[0]}", class: "card__top--image"
+        .card__bottom
+          .card__bottom--name
+            = product.name
+          .card__bottom--content
+            = product.content
