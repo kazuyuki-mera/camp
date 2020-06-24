@@ -1,0 +1,32 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-success
+  = link_to root_path, class: 'navbar-brand red' do
+    camp
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        .nav-link
+          みんなで作り出すキャンプ場
+      - if user_signed_in?
+        %li.nav-item
+          = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+            ログアウト
+      - else
+        %li.nav-item
+          = link_to new_user_registration_path, class: 'nav-link' do
+            会員登録
+        %li.nav-item
+          = link_to new_user_session_path, class: 'nav-link' do
+            ログイン
+      %li.nav-item
+        %a.nav-link{href:  "#"} お問い合わせ
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          コントリビュート
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          %a.dropdown-item{href:  "#"} みんなのレビュー
+          %a.dropdown-item{href:  "#"} みんなのランキング
+    %form.form-inline.my-2.my-lg-0
+      %input.form-control.mr-sm-2{"aria-label" => "Search", placeholder: "Search", type: "search"}
+      %button.btn.btn-outline-light.my-2.my-sm-0{type: "submit"} Search

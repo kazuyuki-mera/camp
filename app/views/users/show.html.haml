@@ -1,0 +1,19 @@
+%h1 ユーザーshow画面
+.row
+  = @user.full_name
+  = @user.full_name_kana
+.row
+  = link_to edit_user_registration_path do
+    編集
+  = link_to user_registration_path, method: :delete do
+    削除
+  = link_to products_path do
+    商品一覧へ
+%h1 予約一覧
+- @reservations.each do |reservation|
+  = link_to product_reservation_path(reservation.product, reservation) do
+    = reservation.product.name
+  = reservation.id
+  = reservation.start_date
+  = reservation.end_date
+  %br

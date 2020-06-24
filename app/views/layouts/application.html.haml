@@ -6,6 +6,12 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", rel: "stylesheet", type: "text/css"}
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}
     = javascript_include_tag 'application'
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
   %body
+    = render partial: 'layouts/header'
+    - if flash[:notice]
+      %p= flash[:notice]
     = yield

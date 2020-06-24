@@ -1,0 +1,38 @@
+.products {
+  margin: 40px 80px;
+  &__heading {
+    font-size: 1.8rem;
+  }
+  &__contents {
+    display: flex;
+    flex-wrap: wrap;
+    .card {
+      width: 32%;
+      height: 300px;
+      border: 1px solid #ddd;
+      margin: 5px;
+      text-decoration: none;
+      &__top {
+        height: 65%;
+        background-color: lightgreen;
+        &--image {
+          height: 100%;
+        }
+      }
+      &__bottom {
+        height: 35%;
+        padding: 5px;
+        &--name {
+          text-align: center;
+          color: black;
+        }
+        &--content {
+          color: gray;
+        }
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

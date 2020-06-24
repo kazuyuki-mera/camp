@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   # 一覧画面
   def index
+    @top_images = ["test1.png", "test2.png", "test3.png"] #トップページで利用する画像を４枚くらい用意する
     @products = Product.all
   end
 
