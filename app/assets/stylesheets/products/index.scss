@@ -1,3 +1,10 @@
+.slick-content {
+  img {
+    height: 75vh;
+    width: 100vw;
+  }
+}
+
 .products {
   margin: 40px 80px;
   &__heading {
@@ -17,6 +24,7 @@
         background-color: lightgreen;
         &--image {
           height: 100%;
+          width: 100%;
         }
       }
       &__bottom {

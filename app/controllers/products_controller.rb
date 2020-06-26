@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   # 一覧画面
   def index
     # product_imagesモデルを作成する
-    @top_images = ["test1.png", "test2.png", "test3.png"] #トップページで利用する画像を４枚くらい用意する
-    @products = Product.page(params[:page]).per(6).order('created_at DESC')
+    @top_images = ["top1.jpg", "top2.jpg", "top3.jpg", "top4.jpg", "top5.jpg"] #トップページで利用する画像を４枚くらい用意する
+    @products = Product.page(params[:page]).per(12).order('created_at DESC')
   end
 
   # 新規作成画面
