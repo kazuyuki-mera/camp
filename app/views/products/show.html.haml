@@ -5,5 +5,7 @@
   = @product.name
   = @product.price
   = @product.content
+  = @product.product_images.first.path
+  -# = image_tag "#{@product.product_images.first.path}"
 = link_to new_product_reservation_path(@product) do
   予約する

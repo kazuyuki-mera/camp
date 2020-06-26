@@ -1,0 +1,16 @@
+.product-form {
+  margin: 40px 80px;
+  padding: 10px;
+  background-color: lightgray;
+  label {
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  &__text, &__text-area {
+    background-color: white;
+  }
+  &__submit {
+    margin-top: 10px;
+    background-color: red; 
+  }
+}

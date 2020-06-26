@@ -1,11 +1,18 @@
-= form_with model: product, local: true do |f|
-  = f.label :サイト名
-  = f.text_field :name
+= form_with model: product, class: 'product-form', local: true do |f|
+  = f.label :商品名
+  %br
+  = f.text_field :name, class: 'product-form__text'
   %br
   = f.label :料金
-  = f.number_field :price
+  %br
+  = f.text_field :price, class: 'product-form__text'
   %br
   = f.label :詳細
-  = f.text_area :content
   %br
-  = f.submit "登録"
+  = f.text_area :content, class: 'product-form__text-area'
+  %br
+  = f.fields_for :product_images do |image|
+    = f.label :画像
+    %br
+    = image.file_field :path, multiple: true, class: 'product-form__text'
+  = f.submit "登録", class: 'product-form__submit'

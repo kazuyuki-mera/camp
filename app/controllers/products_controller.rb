@@ -4,17 +4,18 @@ class ProductsController < ApplicationController
     # product_imagesモデルを作成する
     @top_images = ["test1.png", "test2.png", "test3.png"] #トップページで利用する画像を４枚くらい用意する
     @products = Product.page(params[:page]).per(6).order('created_at DESC')
-    # @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
   # 新規作成画面
   def new
     @product = Product.new
+    @product.product_images.build
   end
 
   # 作成機能
   def create
     Product.create(product_params)
+    binding.pry
     redirect_to products_path
   end
 
@@ -45,6 +46,6 @@ class ProductsController < ApplicationController
   ######################### private #########################
   private
     def product_params
-      params.require(:product).permit(:name, :price, :content)
+      params.require(:product).permit(:name, :price, :content, product_images_attributes:[:path])
     end
 end
