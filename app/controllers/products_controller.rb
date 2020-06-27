@@ -15,7 +15,6 @@ class ProductsController < ApplicationController
   # 作成機能
   def create
     Product.create(product_params)
-    binding.pry
     redirect_to products_path
   end
 
