@@ -1,9 +1,22 @@
-%h1 show画面
-= link_to products_path do
-  一覧へ
-.content__row
-  = @product.name
-  = @product.price
-  = @product.content
-= link_to new_product_reservation_path(@product) do
-  予約する
+.product
+  .product__name
+    = @product.name
+  .product__content
+    = @product.content
+  = link_to new_product_reservation_path(@product), class: 'product__reserve btn btn-primary' do
+    予約する
+  .product__user-verify
+    予約の前に会員登録およびログインが必要になります。
+  .product__other
+    = link_to products_path, class: 'product__other__heading' do
+      他のサイトをみる
+    .products__contents
+      - @products.each do |product|
+        = link_to product_path(product), class: 'card' do
+          .card__top
+            = image_tag "top1.jpg", class: "card__top--image"
+          .card__bottom
+            .card__bottom--name
+              = product.name
+            .card__bottom--content
+              = product.content

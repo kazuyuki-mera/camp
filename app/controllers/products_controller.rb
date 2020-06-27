@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
   # 詳細画面
   def show
     @product = Product.find(params[:id])
+    @products = Product.page(params[:page]).per(3).order('created_at DESC')
   end
 
   # 編集画面
