@@ -10,24 +10,34 @@
       %tr
         %th 宿泊料金
         %td
-          = @product.price
+          = number_to_currency(@product.price)
       %tr
-        %th 予約キャンプ場
-        %td
-          = @product.name
+        %th 宿泊開始日
+        %td # TODO:
       %tr
-        %th 予約キャンプ場
+        %th 宿泊終了日
+        %td # TODO:
+      %tr
+        %th 宿泊人数
+        %td # TODO:
+      %tr
+        %th 予約者名
         %td
-          = @product.name
-  .reservation__info
-    .reservation__info__name
-      = @product.name
+          = current_user.full_name
+      %tr
+        %th 予約者電話番号
+        %td
+          = current_user.phone_number
+      %tr
+        %th 予約者住所
+        %td
+          = current_user.address
   .reservation__form
     = form_with model: [@product, @reservation], local: true do |f|
-      = f.label :宿泊開始日
-      = f.date_field :start_date
-      %br
-      = f.label :宿泊終了日
-      = f.date_field :end_date
-      %br
-      = f.submit '予約する', class: 'btn btn-primary'
+      -# = f.label :宿泊開始日
+      -# = f.date_field :start_date
+      -# %br
+      -# = f.label :宿泊終了日
+      -# = f.date_field :end_date
+      -# %br
+      = f.submit '予約する', class: 'submit btn btn-primary btn-lg btn-block'

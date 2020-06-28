@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def full_name_kana
     self.name_sei_kana + self.name_mei_kana
   end
+
+  def address
+    self.prefecture + ' ' + self.city + ' ' + self.block + ' ' + self.building_name
+  end
 end
