@@ -1,12 +1,33 @@
-%h1 予約new画面
-= @product.id
-= @product.name
-= current_user.email
-= form_with model: [@product, @reservation], local: true do |f|
-  = f.label :宿泊開始日
-  = f.date_field :start_date
-  %br
-  = f.label :宿泊終了日
-  = f.date_field :end_date
-  %br
-  = f.submit '予約する'
+.reservation
+  .reservation__heading
+    宿泊予約内容
+  %table.reservation__table
+    %tbody.reservation__table__body
+      %tr
+        %th 予約サイト名
+        %td
+          = @product.name
+      %tr
+        %th 宿泊料金
+        %td
+          = @product.price
+      %tr
+        %th 予約キャンプ場
+        %td
+          = @product.name
+      %tr
+        %th 予約キャンプ場
+        %td
+          = @product.name
+  .reservation__info
+    .reservation__info__name
+      = @product.name
+  .reservation__form
+    = form_with model: [@product, @reservation], local: true do |f|
+      = f.label :宿泊開始日
+      = f.date_field :start_date
+      %br
+      = f.label :宿泊終了日
+      = f.date_field :end_date
+      %br
+      = f.submit '予約する', class: 'btn btn-primary'
