@@ -1,6 +1,9 @@
 .product
   .product__name
     = @product.name
+  -# 商品の画像が表示されるように修正する
+  .product__image
+    = image_tag "top1"
   .product__content
     = @product.content
   = link_to new_product_reservation_path(@product), class: 'product__reserve btn btn-primary' do

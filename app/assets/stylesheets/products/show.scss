@@ -4,6 +4,11 @@
     font-size: 35px;
     font-weight: bold;
   }
+  &__image {
+    img {
+      width: 100%;
+    }
+  }
   &__content {
     font-size: 25px;
     margin-top: 20px;
