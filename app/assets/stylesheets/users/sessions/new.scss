@@ -1,0 +1,13 @@
+.new_user {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 20px;
+  background-color: whitesmoke;
+  &__heading {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
