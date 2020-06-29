@@ -9,6 +9,7 @@
   margin: 40px 80px;
   &__heading {
     font-size: 1.8rem;
+    font-weight: bold;
   }
   &__contents {
     display: flex;
@@ -21,7 +22,6 @@
       text-decoration: none;
       &__top {
         height: 65%;
-        background-color: lightgreen;
         &--image {
           height: 100%;
           width: 100%;
