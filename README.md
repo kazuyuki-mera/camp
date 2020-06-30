@@ -42,10 +42,11 @@
 **AWSインフラ環境**
 
 - EC2
-  - Ruby on Rails
-  - Ruby
-  - Mysql
   - Nginx
   - Unicorn
 - Route53
 - ELB
+
+**デプロイ**
+
+- Capistrano
