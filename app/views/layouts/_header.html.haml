@@ -10,6 +10,9 @@
           みんなのキャンプ場
       - if user_signed_in?
         %li.nav-item
+          = link_to user_path(current_user), class: 'nav-link' do
+            = current_user.full_name
+        %li.nav-item
           = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
             ログアウト
       - else
