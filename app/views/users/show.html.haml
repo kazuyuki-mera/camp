@@ -1,19 +1,22 @@
-%h1 ユーザーshow画面
-.row
-  = @user.full_name
-  = @user.full_name_kana
-.row
-  = link_to edit_user_registration_path do
-    編集
-  = link_to user_registration_path, method: :delete do
-    削除
-  = link_to products_path do
-    商品一覧へ
-%h1 予約一覧
-- @reservations.each do |reservation|
-  = link_to product_reservation_path(reservation.product, reservation) do
-    = reservation.product.name
-  = reservation.id
-  = reservation.start_date
-  = reservation.end_date
-  %br
+.user
+  .user__menu
+    .list-group
+      = link_to edit_user_registration_path, class: 'list-group-item list-group-item-action' do
+        ユーザー情報変更
+      = link_to user_registration_path, id: 'user-delete', class: 'list-group-item list-group-item-action', method: :delete do
+        ユーザー退会
+      %a.list-group-item.list-group-item-action{href: "#"} レビュー履歴
+  .user__reservation
+    .user__reservation--heading
+      予約履歴一覧
+    - @reservations.each do |reservation|
+      .card
+        %h5.card-header
+          = reservation.product.name
+        .card-body
+          %p.card-text
+            予約開始終了日
+          %h5.card-title
+            = reservation.start_end_date
+          = link_to product_reservation_path(reservation.product, reservation), class: 'btn btn-primary' do
+            予約詳細を見る
