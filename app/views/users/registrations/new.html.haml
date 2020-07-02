@@ -35,13 +35,13 @@
       = f.text_field :building_name, class: 'form-control'
   .form-group
     = f.label :メールアドレス（必須）
-    = f.email_field :email, class: 'form-control', autocomplete: "email"
+    = f.email_field :email, class: 'form-control', autocomplete: 'email'
   .form-group
     = f.label :パスワード（必須）
-    = f.password_field :password, class: 'form-control', autocomplete: "new-password"
+    = f.password_field :password, class: 'form-control', autocomplete: 'new-password'
   .form-group
     = f.label :パスワード確認（必須）
-    = f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password"
-  = f.submit "会員登録する", class: 'btn btn-primary btn-lg btn-block form-group'
-  = link_to "ログインはこちらから", new_session_path(resource_name)
+    = f.password_field :password_confirmation, class: 'form-control', autocomplete: 'new-password'
+  = f.submit '会員登録する', class: 'btn btn-primary btn-lg btn-block form-group'
+  = link_to 'ログインはこちらから', new_session_path(resource_name)
 -# = render "users/shared/links"
