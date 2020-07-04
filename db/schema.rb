@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_25_122350) do
+ActiveRecord::Schema.define(version: 2020_07_04_140552) do
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "商品イメージ", force: :cascade do |t|
     t.bigint "product_id", comment: "商品ID"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_06_25_122350) do
     t.string "name", default: "", null: false, comment: "商品名"
     t.integer "price", default: 0, null: false, comment: "料金"
     t.text "content", comment: "商品詳細"
+    t.integer "max_count", default: 0, null: false, comment: "最大人数"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
