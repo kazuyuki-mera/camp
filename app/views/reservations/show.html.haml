@@ -21,7 +21,9 @@
           = @reservation.end_date
       %tr
         %th 宿泊人数
-        %td # TODO:
+        %td
+          = @reservation.reserver_count
+          名
       %tr
         %th 予約者名
         %td
