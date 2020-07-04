@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_140552) do
+ActiveRecord::Schema.define(version: 2020_07_04_141528) do
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "商品イメージ", force: :cascade do |t|
     t.bigint "product_id", comment: "商品ID"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_140552) do
     t.bigint "user_id", comment: "ユーザーID"
     t.date "start_date", null: false, comment: "宿泊開始日"
     t.date "end_date", null: false, comment: "宿泊終了日"
+    t.integer "reserver_count", default: 0, null: false, comment: "予約人数"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_reservations_on_product_id"

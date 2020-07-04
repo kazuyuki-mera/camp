@@ -23,6 +23,6 @@ class ReservationsController < ApplicationController
   ######################### private #########################
   private
     def reservation_params
-      params.require(:reservation).permit(:start_date, :end_date).merge(product_id: params[:product_id], user_id: current_user.id)
+      params.require(:reservation).permit(:start_date, :end_date, :reserver_count).merge(product_id: params[:product_id], user_id: current_user.id)
     end
 end
