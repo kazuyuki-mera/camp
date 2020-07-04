@@ -1,5 +1,36 @@
-%h1 予約詳細画面
-= @reservation.product.name
-= @reservation.product.price
-= @reservation.start_date
-= @reservation.end_date
+.reservation
+  .reservation__heading
+    宿泊予約詳細
+  %table.reservation__table
+    %tbody.reservation__table__body
+      %tr
+        %th 予約サイト名
+        %td
+          = @reservation.product.name
+      %tr
+        %th 宿泊料金
+        %td
+          = number_to_currency(@reservation.product.price)
+      %tr
+        %th 宿泊開始日
+        %td
+          = @reservation.start_date
+      %tr
+        %th 宿泊終了日
+        %td
+          = @reservation.end_date
+      %tr
+        %th 宿泊人数
+        %td # TODO:
+      %tr
+        %th 予約者名
+        %td
+          = @reservation.user.full_name
+      %tr
+        %th 予約者電話番号
+        %td
+          = @reservation.user.phone_number
+      %tr
+        %th 予約者住所
+        %td
+          = @reservation.user.address
