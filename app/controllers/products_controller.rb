@@ -45,6 +45,7 @@ class ProductsController < ApplicationController
 
   ######################### private #########################
   private
+    # productストロングパラメータ
     def product_params
       params.require(:product).permit(:name, :price, :content, :max_count, product_images_attributes:[:path])
     end

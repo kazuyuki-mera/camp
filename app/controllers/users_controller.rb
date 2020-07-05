@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # ログインユーザーのみアクセス許可
   before_action :authenticate_user!
   
   # 詳細画面
