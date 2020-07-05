@@ -1,43 +1,40 @@
 .reservation
   .reservation__heading
     宿泊予約内容
-  %table.reservation__table
-    %tbody.reservation__table__body
-      %tr
-        %th 予約サイト名
-        %td
-          = @product.name
-      %tr
-        %th 宿泊料金
-        %td
-          = number_to_currency(@product.price)
-      %tr
-        %th 宿泊開始日
-        %td # TODO:
-      %tr
-        %th 宿泊終了日
-        %td # TODO:
-      %tr
-        %th 宿泊人数
-        %td # TODO:
-      %tr
-        %th 予約者名
-        %td
-          = current_user.full_name
-      %tr
-        %th 予約者電話番号
-        %td
-          = current_user.phone_number
-      %tr
-        %th 予約者住所
-        %td
-          = current_user.address
-  .reservation__form
-    = form_with model: [@product, @reservation], local: true do |f|
-      -# = f.label :宿泊開始日
-      -# = f.date_field :start_date
-      -# %br
-      -# = f.label :宿泊終了日
-      -# = f.date_field :end_date
-      -# %br
-      = f.submit '予約する', class: 'submit btn btn-primary btn-lg btn-block'
+  = form_with model: [@product, @reservation], local: true do |f|
+    %table.reservation__table
+      %tbody.reservation__table__body
+        %tr
+          %th 予約サイト名
+          %td
+            = @product.name
+        %tr
+          %th 宿泊開始日
+          %td
+            = f.date_field :start_date, {value: Time.now.strftime('%Y-%m-%d')}
+        %tr
+          %th 宿泊終了日
+          %td
+            = f.date_field :end_date, {value: Time.now.strftime('%Y-%m-%d')}
+        %tr
+          %th 宿泊人数
+          %td
+            = f.select :reserver_count, @reservation.select_reserver_count(@product.max_count), {include_blank: '宿泊人数'}, class: 'custom-select'
+        %tr
+          %th 予約者名
+          %td
+            = current_user.full_name
+        %tr
+          %th 予約者電話番号
+          %td
+            = current_user.phone_number
+        %tr
+          %th 予約者住所
+          %td
+            = current_user.address
+        %tr
+          %th 宿泊料金
+          %td
+            = number_to_currency(@product.price)
+        %tr
+    = f.submit '予約する', class: 'submit btn btn-primary btn-lg btn-block'
