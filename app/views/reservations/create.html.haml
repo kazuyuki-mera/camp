@@ -1,4 +1,5 @@
-%h1 予約完了画面
-%p 予約が完了しました。
-= link_to products_path do
-  商品一覧画面へ戻る
+.reservation
+  #reservation-create.reservation__heading
+    予約が完了しました。
+  = link_to products_path, id: 'reservation-create-path' do
+    商品一覧画面へ戻る
