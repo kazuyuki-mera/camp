@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     if current_user.id == params[:id].to_i
       @user = User.find(params[:id])
-      @reservations = Reservation.all.includes(:user).order("start_date ASC")
+      @reservations = Reservation.page(params[:page]).per(5).includes(:user).order('created_at DESC')
     else
       redirect_to products_path
     end
