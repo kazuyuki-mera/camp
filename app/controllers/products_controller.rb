@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
   # 新規作成画面
   def new
     @product = Product.new
-    @product.product_images.build
   end
 
   # 作成機能
@@ -47,6 +46,6 @@ class ProductsController < ApplicationController
   private
     # productストロングパラメータ
     def product_params
-      params.require(:product).permit(:name, :price, :content, :max_count, product_images_attributes:[:path])
+      params.require(:product).permit(:name, :price, :content, :max_count, :image)
     end
 end
