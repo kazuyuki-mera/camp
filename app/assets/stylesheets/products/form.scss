@@ -1,16 +1,11 @@
 .product-form {
-  margin: 40px 80px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
   padding: 10px;
-  background-color: lightgray;
+  background-color: whitesmoke;
   label {
     margin: 10px 0;
     font-weight: bold;
-  }
-  &__text, &__text-area {
-    background-color: white;
-  }
-  &__submit {
-    margin-top: 10px;
-    background-color: red; 
   }
 }

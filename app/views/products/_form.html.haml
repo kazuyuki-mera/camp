@@ -1,18 +1,19 @@
 = form_with model: product, class: 'product-form', local: true do |f|
-  = f.label :商品名
-  %br
-  = f.text_field :name, class: 'product-form__text'
-  %br
-  = f.label :料金
-  %br
-  = f.text_field :price, class: 'product-form__text'
-  %br
-  = f.label :詳細
-  %br
-  = f.text_area :content, class: 'product-form__text-area'
-  %br
-  = f.fields_for :product_images do |image|
-    = f.label :画像
-    %br
-    = image.file_field :path, multiple: true, class: 'product-form__text'
-  = f.submit "登録", class: 'product-form__submit'
+  .form-group
+    = f.label :商品名
+    = f.text_field :name, class: 'form-control'
+  .form-row
+    .form-group.col-md-6
+      = f.label :宿泊料金（円）
+      = f.number_field :price, class: 'form-control'
+    .form-group.col-md-6
+      = f.label :最大宿泊人数
+      = f.number_field :max_count, class: 'form-control'
+  .form-group
+    = f.label :商品詳細
+    = f.text_area :content, class: 'form-control'
+  .form-group
+    = f.label :商品画像
+    = f.file_field :image
+  .view-area
+  = f.submit '商品を登録する', class: 'btn btn-primary btn-lg btn-block form-group'
