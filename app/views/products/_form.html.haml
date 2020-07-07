@@ -16,4 +16,5 @@
     = f.label :商品画像
     = f.file_field :image
   .view-area
+    = image_tag "#{@product.image}", id: 'product-image'
   = f.submit '商品を登録する', class: 'btn btn-primary btn-lg btn-block form-group'

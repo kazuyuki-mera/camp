@@ -5,10 +5,17 @@
     = image_tag "#{@product.image}"
   .product__content
     = @product.content
-  = link_to new_product_reservation_path(@product), class: 'product__reserve btn btn-primary' do
-    予約する
-  .product__user-verify
-    予約の前に会員登録およびログインが必要になります。
+  .product__price
+    = number_to_currency(@product.price)
+    〜
+  - if user_signed_in? && current_user.admin?
+    = link_to edit_product_path(@product),  class: 'product__reserve btn btn-primary' do
+      編集する
+  - else
+    = link_to new_product_reservation_path(@product), class: 'product__reserve btn btn-primary' do
+      予約する
+    .product__user-verify
+      予約の前に会員登録およびログインが必要になります。
   .product__other
     = link_to products_path, class: 'product__other__heading' do
       他のサイトをみる
