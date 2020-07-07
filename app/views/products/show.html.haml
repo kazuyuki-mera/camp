@@ -1,9 +1,8 @@
 .product
   .product__name
     = @product.name
-  -# 商品の画像が表示されるように修正する
   .product__image
-    = image_tag "top1"
+    = image_tag "#{@product.image}"
   .product__content
     = @product.content
   = link_to new_product_reservation_path(@product), class: 'product__reserve btn btn-primary' do
@@ -17,7 +16,7 @@
       - @products.each do |product|
         = link_to product_path(product), class: 'card' do
           .card__top
-            = image_tag "top1.jpg", class: "card__top--image"
+            = image_tag "#{product.image}", class: "card__top--image"
           .card__bottom
             .card__bottom--name
               = product.name
