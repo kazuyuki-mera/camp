@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_113543) do
+ActiveRecord::Schema.define(version: 2020_07_07_001210) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "商品", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "商品名"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_113543) do
     t.string "city", default: "", null: false, comment: "市区町村"
     t.string "block", default: "", comment: "番地"
     t.string "building_name", default: "", comment: "建物名"
+    t.boolean "admin", default: false, comment: "管理権限"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
