@@ -2,19 +2,31 @@
   .form-group
     = f.label :商品名
     = f.text_field :name, class: 'form-control'
+    - if product.errors.include?(:name)
+      .error-msg
+        = product.errors.full_messages_for(:name).first
   .form-row
     .form-group.col-md-6
       = f.label :宿泊料金（円）
       = f.number_field :price, class: 'form-control'
+      - if product.errors.include?(:price)
+        .error-msg
+          = product.errors.full_messages_for(:price).first
     .form-group.col-md-6
       = f.label :最大宿泊人数
       = f.number_field :max_count, class: 'form-control'
+      - if product.errors.include?(:max_count)
+        .error-msg
+          = product.errors.full_messages_for(:max_count).first
   .form-group
     = f.label :商品詳細
     = f.text_area :content, class: 'form-control'
+    - if product.errors.include?(:content)
+      .error-msg
+        = product.errors.full_messages_for(:content).first
   .form-group
     = f.label :商品画像
     = f.file_field :image
   .view-area
-    = image_tag "#{@product.image}", id: 'product-image'
+    = image_tag "#{product.image}", id: 'product-image'
   = f.submit '商品を登録する', class: 'btn btn-primary btn-lg btn-block form-group'
