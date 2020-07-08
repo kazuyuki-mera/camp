@@ -34,9 +34,12 @@ class ProductsController < ApplicationController
 
   # 編集機能
   def update
-    product = Product.find(params[:id])
-    product.update(product_params)
-    redirect_to product_path(product)
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to product_path(product)
+    else
+      render :edit
+    end
   end
 
   # 削除機能
