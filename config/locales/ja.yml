@@ -7,25 +7,38 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
     models:
-      contact: "お問い合わせ"
+      product: "商品"
       user: "ユーザー"
     attributes:
-      contact:
+      product:
+        name: "商品名"
+        price: "料金"
+        content: "商品詳細"
+        max_count: "最大人数"
+        image: "画像"
+        created_at: "作成日"
+        updated_at: "更新日"
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
         name_sei: "姓"
         name_mei: "名"
         name_sei_kana: "姓カナ"
         name_mei_kana: "名カナ"
-        sex: "性別"
-        age: "年齢"
-        email: "メールアドレス"
-        introducer: "ご紹介者"
-        content: "内容"
-        created_at: 作成日
+        phone_number: "電話番号"
+        prefecture: "都道府県"
+        city: "市区町村"
+        block: "番地"
+        building_name: "建物名"
+        admin: "管理権限"
+        created_at: "作成日"
         updated_at: "更新日"
-      user:
-        admin: "管理者"
-        email: "メールアドレス"
-        password: "パスワード"
+      reservation:
+        product_id: "商品ID"
+        user_id: "ユーザーID"
+        start_date: "宿泊開始日"
+        end_date: "宿泊終了日"
+        reserver_count: "予約人数"
         created_at: "作成日"
         updated_at: "更新日"
   date:
