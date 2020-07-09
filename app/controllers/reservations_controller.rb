@@ -41,9 +41,4 @@ class ReservationsController < ApplicationController
         redirect_to new_user_registration_path # ユーザー新規作成画面
       end
     end
-
-    # TODO:宿泊開始終了日のFromToチェック
-    def from_to_check
-      
-    end
 end
