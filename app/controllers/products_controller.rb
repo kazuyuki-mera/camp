@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  # 管理者のみアクセス許可
+  before_action :authenticate_admin, only: [:new, :create, :edit, :update]
   # 一覧画面
   def index
     # product_imagesモデルを作成する
@@ -54,5 +56,10 @@ class ProductsController < ApplicationController
     # productストロングパラメータ
     def product_params
       params.require(:product).permit(:name, :price, :content, :max_count, :image)
+    end
+
+    # 管理者判定
+    def authenticate_admin
+      redirect_to products_path unless current_user.admin?
     end
 end
