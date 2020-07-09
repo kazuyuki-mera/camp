@@ -12,7 +12,11 @@ class ReservationsController < ApplicationController
 
   # 作成機能
   def create
-    Reservation.create(reservation_params)
+    @reservation = Reservation.new(reservation_params)
+    unless @reservation.save
+      @product = Product.find(params[:product_id])
+      render :new
+    end
   end
 
   # 詳細画面
