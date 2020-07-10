@@ -43,7 +43,9 @@
             = current_user.address
         %tr
           %th 宿泊料金
-          %td
+          %td#total_price
             = number_to_currency(@product.price)
+          = f.hidden_field :total_price, {value: @product.price}
+          %div#hidde-price{data: {price: @product.price}}
         %tr
     = f.submit '予約する', id: 'reservation-confirm', class: 'submit btn btn-primary btn-lg btn-block'
