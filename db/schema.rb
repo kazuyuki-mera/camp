@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_001210) do
+ActiveRecord::Schema.define(version: 2020_07_10_122237) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "商品", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "商品名"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_001210) do
     t.date "start_date", null: false, comment: "宿泊開始日"
     t.date "end_date", null: false, comment: "宿泊終了日"
     t.integer "reserver_count", default: 0, null: false, comment: "予約人数"
+    t.integer "total_price", default: 0, null: false, comment: "合計宿泊料金"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_reservations_on_product_id"

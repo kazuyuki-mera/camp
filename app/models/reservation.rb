@@ -7,6 +7,7 @@ class Reservation < ApplicationRecord
   validates :start_date,     presence: true
   validates :end_date,       presence: true
   validates :reserver_count, presence: true
+  validates :total_price,    presence: true
   validate  :start_date_not_before_today
   validate  :end_date_not_before_today
   validate  :start_date_not_after_end_date

@@ -31,7 +31,7 @@ class ReservationsController < ApplicationController
   private
     # reservationストロングパラメータ
     def reservation_params
-      params.require(:reservation).permit(:start_date, :end_date, :reserver_count).merge(product_id: params[:product_id], user_id: current_user.id)
+      params.require(:reservation).permit(:start_date, :end_date, :reserver_count, :total_price).merge(product_id: params[:product_id], user_id: current_user.id)
     end
 
     # ユーザーが未ログインの場合、会員登録画面へリダイレクト
