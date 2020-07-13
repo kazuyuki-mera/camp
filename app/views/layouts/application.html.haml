@@ -12,6 +12,7 @@
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
   %body
     - if flash[:notice]
-      %p= flash[:notice]
+      .alert.alert-primary#alert{:role => "alert"}
+        = flash[:notice]
     = render partial: 'layouts/header'
     = yield
