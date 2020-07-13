@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_122237) do
+ActiveRecord::Schema.define(version: 2020_07_13_005559) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "商品", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "商品名"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 2020_07_10_122237) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_reservations_on_product_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "レビュー", force: :cascade do |t|
+    t.bigint "product_id", comment: "商品ID"
+    t.bigint "user_id", comment: "ユーザーID"
+    t.integer "rate", default: 0, null: false, comment: "評価"
+    t.text "content", comment: "内容"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "ユーザー", force: :cascade do |t|
@@ -59,4 +70,6 @@ ActiveRecord::Schema.define(version: 2020_07_10_122237) do
 
   add_foreign_key "reservations", "products"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users"
 end
