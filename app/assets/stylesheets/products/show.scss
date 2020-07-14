@@ -36,6 +36,33 @@
       }
     }
   }
+  &__reviews {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: whitesmoke;
+    &__heading {
+      font-size: 20px;
+      font-weight: bold;
+      color: gray;
+    }
+    .review {
+      margin-top: 20px;
+      border-bottom: 1px dotted gray;
+      &__user {
+
+      }
+      &__content {
+        margin-top: 10px;
+      }
+      &__info {
+        margin-top: 20px;
+        border-bottom: 1px dotted gray;
+        &__content {
+
+        }
+      }
+    }
+  }
   .product-list {
     margin-left: 5px;
   }

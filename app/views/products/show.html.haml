@@ -16,6 +16,23 @@
       予約する
     .product__user-verify
       予約の前に会員登録およびログインが必要になります。
+  .product__reviews
+    .product__reviews__heading
+      最新のレビュー
+    .review
+      .review__user
+        ユーザー1さん
+      .progress.fivestar
+        .progress-bar.progress-bar-star{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "50", :role => "progressbar", :style => "width: 100%"}
+      .review__content
+        レビュー１。とても良かったです。また行きたいです。
+    .review
+      .review__user
+        ユーザー1さん
+      .progress.fivestar
+        .progress-bar.progress-bar-star{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "50", :role => "progressbar", :style => "width: 100%"}
+      .review__content
+        レビュー１。とても良かったです。また行きたいです。
   .product__other
     = link_to products_path, class: 'product__other__heading' do
       他のサイトをみる

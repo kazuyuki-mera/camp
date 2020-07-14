@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root   'products#index'
   resources :products do
     resources :reservations
+    resources :reviews, only: [:new, :create]
   end
   resources :users, only: [:show]
 end
