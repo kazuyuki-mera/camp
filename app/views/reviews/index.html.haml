@@ -1,0 +1,23 @@
+.reviews
+  .reviews__heading
+    みんなのレビュー一覧
+  .reviews__contents
+    - @reviews.each do |review|
+      .card.mb-3
+        .row.no-gutters
+          .col-md-4
+            = image_tag "#{review.product.image}"
+          .col-md-8
+            .card-body
+              %h5.card-title
+                = review.product.name
+              %p.card-text
+                = review.content
+              %p.card-text
+                .progress.fivestar
+                  .progress-bar.progress-bar-star{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "50", :role => "progressbar", :style => "width: #{review.rate}0%"}
+              %p.card-text
+                %small.text-muted
+                  = review.user.full_name
+                  さん
+  = paginate(@reviews)

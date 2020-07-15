@@ -1,0 +1,16 @@
+.reviews {
+  margin: 40px 80px;
+  &__heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__contents {
+    padding: 20px;
+    background-color: whitesmoke;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

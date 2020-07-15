@@ -28,7 +28,8 @@
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
           コントリビュート
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          %a.dropdown-item{href:  "#"} みんなのレビュー
+          = link_to reviews_path, class: 'dropdown-item' do
+            みんなのレビュー
           %a.dropdown-item{href:  "#"} みんなのランキング
     %form.form-inline.my-2.my-lg-0
       %input.form-control.mr-sm-2{"aria-label" => "Search", placeholder: "Search", type: "search"}
