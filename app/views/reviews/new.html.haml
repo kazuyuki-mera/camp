@@ -1,0 +1,22 @@
+.review
+  .review__heading
+    レビューを書く
+  .review__content
+    .review__content__name
+      = @product.name
+    = image_tag "#{@product.image}"
+    = form_with model: [@product, @review], local: true do |f|
+      .input-rate
+        = f.label :rate
+        = f.select :rate, @review.select_rate_count(10), {include_blank: '10段階で評価してください'}, class: 'custom-select'
+        - if @review.errors.include?(:rate)
+          .error-msg
+            = @review.errors.full_messages_for(:rate).first
+      .input-content
+        = f.label :content
+        = f.text_area :content, placeholder: '300文字以内でレビューを書いてください'
+        - if @review.errors.include?(:content)
+          .error-msg
+            = @review.errors.full_messages_for(:content).first
+      = f.submit 'レビューを投稿する', id: 'review-confirm', class: 'submit btn btn-warning btn-lg btn-block'
+

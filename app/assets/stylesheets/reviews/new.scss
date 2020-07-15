@@ -1,0 +1,44 @@
+.review {
+  margin: 40px 80px;
+  background-color: whitesmoke;
+  &__heading {
+    font-size: 35px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+  }
+  &__content {
+    width: 100%;
+    &__name {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 5px 0;
+    }
+    img {
+      width: 100%;
+    }
+    form {
+      width: 100%;
+      .input-rate {
+        padding: 8px;
+        font-weight: bold;
+        border: 1px solid #dee2e6;
+      }
+      .input-content {
+        padding: 8px;
+        font-weight: bold;
+        border: 1px solid #dee2e6;
+        textarea {
+          display: block;
+          width: 100%;
+          font-weight: normal;
+          padding: 5px;
+          background-color: white;
+        }
+      }
+    }
+  }
+}
