@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @products = Product.page(params[:page]).per(3).order('created_at DESC')
+    @reviews = Review.where(product_id: @product.id).page(params[:page]).per(10).order('created_at DESC')
   end
 
   # 編集画面

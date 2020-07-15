@@ -14,25 +14,21 @@
   - else
     = link_to new_product_reservation_path(@product), class: 'product__reserve btn btn-primary' do
       予約する
+    = link_to new_product_review_path(@product), class: 'product__reserve btn btn-warning ml-3' do
+      レビューを書く
     .product__user-verify
-      予約の前に会員登録およびログインが必要になります。
+      予約・レビューの前に会員登録およびログインが必要になります。
   .product__reviews
     .product__reviews__heading
       最新のレビュー
-    .review
-      .review__user
-        ユーザー1さん
-      .progress.fivestar
-        .progress-bar.progress-bar-star{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "50", :role => "progressbar", :style => "width: 100%"}
-      .review__content
-        レビュー１。とても良かったです。また行きたいです。
-    .review
-      .review__user
-        ユーザー1さん
-      .progress.fivestar
-        .progress-bar.progress-bar-star{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "50", :role => "progressbar", :style => "width: 100%"}
-      .review__content
-        レビュー１。とても良かったです。また行きたいです。
+    - @reviews.each do |review|
+      .review-info
+        .review__user
+          = review.user.full_name
+        .progress.fivestar
+          .progress-bar.progress-bar-star{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "50", :role => "progressbar", :style => "width: #{review.rate}0%"}
+        .review__content
+          = review.content
   .product__other
     = link_to products_path, class: 'product__other__heading' do
       他のサイトをみる
