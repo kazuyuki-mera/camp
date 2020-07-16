@@ -12,6 +12,7 @@ ja:
     attributes:
       product:
         name: "商品名"
+        heading: "見出し"
         price: "料金"
         content: "商品詳細"
         max_count: "最大人数"

@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
   private
     # productストロングパラメータ
     def product_params
-      params.require(:product).permit(:name, :price, :content, :max_count, :image)
+      params.require(:product).permit(:name, :heading, :price, :content, :max_count, :image)
     end
 
     # 管理者判定

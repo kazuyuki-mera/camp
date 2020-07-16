@@ -5,6 +5,12 @@
     - if product.errors.include?(:name)
       .error-msg
         = product.errors.full_messages_for(:name).first
+  .form-group
+    = f.label :見出し
+    = f.text_field :heading, class: 'form-control'
+    - if product.errors.include?(:heading)
+      .error-msg
+        = product.errors.full_messages_for(:heading).first
   .form-row
     .form-group.col-md-6
       = f.label :宿泊料金（円）

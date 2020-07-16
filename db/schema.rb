@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_005559) do
+ActiveRecord::Schema.define(version: 2020_07_16_121359) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "商品", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "商品名"
+    t.string "heading", default: "", null: false, comment: "見出し"
     t.integer "price", default: 0, null: false, comment: "料金"
     t.text "content", comment: "商品詳細"
     t.integer "max_count", default: 0, null: false, comment: "最大人数"

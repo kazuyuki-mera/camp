@@ -33,9 +33,16 @@
         &--name {
           text-align: center;
           color: black;
+          height: 30%;
         }
-        &--content {
+        &--heading {
+          text-align: center;
           color: gray;
+          height: 30%;
+        }
+        .fivestar {
+          margin: 0 auto;
+          height: 30%;
         }
       }
       &:hover {
