@@ -1,4 +1,10 @@
 $(function(){
+  // 登録確認ダイアログ
+  $('#product-confirm').click(function(){
+    if (!confirm('この内容で登録してよろしいでしょうか？')) {
+      return false;
+    }
+  });
 
   $('#product_image').change(function(){
     let viewArea = $('.view-area');
