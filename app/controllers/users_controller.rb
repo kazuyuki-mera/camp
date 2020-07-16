@@ -11,4 +11,9 @@ class UsersController < ApplicationController
       redirect_to products_path
     end
   end
+
+  # レビュー履歴一覧画面
+  def reviews
+    @reviews = Review.page(params[:page]).per(5).where(user_id: params[:id]).includes(:user).order('created_at DESC')
+  end
 end

@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   resources :reviews, only: [:index]
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      get :reviews
+    end
+  end
 end

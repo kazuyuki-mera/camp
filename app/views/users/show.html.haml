@@ -1,11 +1,12 @@
 .user
   .user__menu
     .list-group
+      = link_to reviews_user_path, class: 'list-group-item list-group-item-action' do
+        レビュー履歴一覧
       = link_to edit_user_registration_path, class: 'list-group-item list-group-item-action' do
         ユーザー情報変更
       = link_to user_registration_path, id: 'user-delete', class: 'list-group-item list-group-item-action', method: :delete do
         ユーザー退会
-      %a.list-group-item.list-group-item-action{href: "#"} レビュー履歴
   .user__reservation
     .user__reservation--heading
       予約履歴一覧
