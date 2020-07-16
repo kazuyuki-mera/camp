@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   # ユーザーのログインチェック
-  before_action :require_login
+  before_action :require_login, only: [:new, :create]
 
   def index
     @reviews = Review.page(params[:page]).per(10).order('created_at DESC')
