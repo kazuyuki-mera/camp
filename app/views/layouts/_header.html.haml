@@ -30,7 +30,8 @@
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
           = link_to reviews_path, class: 'dropdown-item' do
             みんなのレビュー
-          %a.dropdown-item{href:  "#"} みんなのランキング
+          = link_to ranking_index_path, class: 'dropdown-item' do
+            みんなのランキング
     %form.form-inline.my-2.my-lg-0
       %input.form-control.mr-sm-2{"aria-label" => "Search", placeholder: "Search", type: "search"}
       %button.btn.btn-outline-light.my-2.my-sm-0{type: "submit"} Search

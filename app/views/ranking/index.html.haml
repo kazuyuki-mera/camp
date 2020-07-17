@@ -1,0 +1,23 @@
+.ranking
+  .ranking__heading
+    みんなのランキング
+  .ranking__contents
+    - @ranking.each.with_index(1) do |product, i|
+      %span.ranking__contents__rank
+        = i
+        位
+      %span.ranking__contents__name
+        = product.name
+      = link_to product_path(product), class: 'ranking__contents__link' do
+        .card.mb-5
+          .row.no-gutters
+            .col-md-4
+              = image_tag "#{product.image}"
+            .col-md-8
+              .card-body
+                %h5.card-title
+                  = product.name
+                %p.card-text
+                  = product.content
+                .progress.fivestar
+                  .progress-bar.progress-bar-star{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "50", :role => "progressbar", :style => "width: #{product.review_average}0%"}
