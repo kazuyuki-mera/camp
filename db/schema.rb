@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_121359) do
+ActiveRecord::Schema.define(version: 2020_07_17_115510) do
+
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "お問い合わせ", force: :cascade do |t|
+    t.string "name", default: "", null: false, comment: "お名前"
+    t.string "name_kana", default: "", null: false, comment: "お名前（カナ）"
+    t.string "email", default: "", null: false, comment: "メールアドレス"
+    t.text "content", comment: "内容"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "商品", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "商品名"
