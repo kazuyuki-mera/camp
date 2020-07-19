@@ -1,0 +1,31 @@
+.contacts
+  .contacts__heading
+    お問い合わせ
+  .contacts__content
+    = form_with model: @contact, local: true do |f|
+      .form-group
+        = f.label :お名前
+        = f.text_field :name, class: 'form-control'
+        - if @contact.errors.include?(:name)
+          .error-msg
+            = @contact.errors.full_messages_for(:name).first
+      .form-group
+        = f.label :お名前（カナ）
+        = f.text_field :name_kana, class: 'form-control'
+        - if @contact.errors.include?(:name_kana)
+          .error-msg
+            = @contact.errors.full_messages_for(:name_kana).first
+      .form-group
+        = f.label :メールアドレス
+        = f.email_field :email, class: 'form-control', autocomplete: 'email'
+        - if @contact.errors.include?(:email)
+          .error-msg
+            = @contact.errors.full_messages_for(:email).first
+      .form-group
+        = f.label :内容
+        = f.text_area :content, class: 'form-control'
+        - if @contact.errors.include?(:content)
+          .error-msg
+            = @contact.errors.full_messages_for(:content).first
+      = f.submit 'お問い合わせする', id: 'contact-confirm', class: 'submit btn btn-primary btn-lg btn-block'
+

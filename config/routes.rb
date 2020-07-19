@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:index]
   resources :ranking, only: [:index]
+  resources :contacts
   resources :users, only: [:show] do
     member do
       get :reviews

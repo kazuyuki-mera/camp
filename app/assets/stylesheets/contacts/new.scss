@@ -1,0 +1,15 @@
+.contacts {
+  margin: 40px 80px;
+  background-color: whitesmoke;
+  &__heading {
+    font-size: 35px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+  }
+  &__content {
+    padding: 10px;
+  }
+}

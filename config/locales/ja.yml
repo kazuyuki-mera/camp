@@ -47,6 +47,11 @@ ja:
         user_id: "ユーザーID"
         rate: "評価"
         content: "内容"
+      contact:
+        name: "お名前"
+        name_kana: "お名前（カナ）"
+        email: "メールアドレス"
+        content: "内容"
   date:
     abbr_day_names:
     - 日

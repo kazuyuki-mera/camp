@@ -23,7 +23,8 @@
           = link_to new_user_session_path, class: 'nav-link' do
             ログイン
       %li.nav-item
-        %a.nav-link{href:  "#"} お問い合わせ
+        = link_to new_contact_path, class: 'nav-link' do
+          お問い合わせ
       %li.nav-item.dropdown
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
           コントリビュート
