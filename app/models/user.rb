@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # アソシエーション
   has_many :reservations
   has_many :reviews
+  has_many :reservation_tables
 
   # バリデーション
   validates :name_sei,      presence: true, length: { maximum: 10 }

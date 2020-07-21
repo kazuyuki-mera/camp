@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   # アソシエーション
   has_many :reservations
   has_many :reviews
+  has_many :reservation_tables
 
   # バリデーション
   validates :name,      presence: true, length: { maximum: 20 }

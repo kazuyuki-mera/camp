@@ -13,9 +13,18 @@ class ReservationsController < ApplicationController
   # 作成機能
   def create
     @reservation = Reservation.new(reservation_params)
-    unless @reservation.save
-      @product = Product.find(params[:product_id])
-      render :new
+    start_date = params[:reservation][:start_date].to_date
+    end_date   = params[:reservation][:end_date].to_date
+    Reservation.transaction do
+      if @reservation.save
+        # 開始〜終了日の予約表レコードを作成
+        (start_date..end_date).each do |date|
+          ReservationTable.create(reservation_id: @reservation.id, product_id: @reservation.product_id, user_id: @reservation.user_id, reservation_date: date)
+        end
+      else
+        @product = Product.find(params[:product_id])
+        render :new
+      end
     end
   end
 
