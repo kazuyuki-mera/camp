@@ -9,6 +9,10 @@ ja:
     models:
       product: "商品"
       user: "ユーザー"
+      reservation: "予約"
+      review: "レビュー"
+      contact: "お問い合わせ"
+      reservation_table: "予約表"
     attributes:
       product:
         name: "商品名"
@@ -52,6 +56,11 @@ ja:
         name_kana: "お名前（カナ）"
         email: "メールアドレス"
         content: "内容"
+      reservation_table:
+        reservation_id: "予約ID"
+        product_id: "商品ID"
+        user_id: "ユーザーID"
+        reservation_date: "予約日"
   date:
     abbr_day_names:
     - 日
