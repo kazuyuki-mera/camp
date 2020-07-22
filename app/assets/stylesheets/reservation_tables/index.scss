@@ -1,0 +1,33 @@
+.reservation-tables {
+  margin: 40px 80px;
+  &__search {
+    border: 1px solid;
+    form {
+      background-color: whitesmoke;
+      .content {
+        margin: 0 auto;
+        width: 50%;
+        text-align: center;
+        label {
+          font-weight: bold;
+        }
+        input {
+          border: 1px solid;
+        }
+      }
+    }
+  }
+  &__heading {
+    font-size: 35px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+  }
+  .table {
+    thead {
+      font-size: 20px;
+    }
+  }
+}

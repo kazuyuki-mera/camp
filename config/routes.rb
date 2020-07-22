@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:index]
   resources :ranking, only: [:index]
+  resources :reservation_tables, only: [:index] do
+    collection do
+      get :search
+    end
+  end
   resources :contacts
   resources :users, only: [:show] do
     member do

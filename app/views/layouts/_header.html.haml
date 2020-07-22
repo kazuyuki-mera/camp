@@ -33,6 +33,15 @@
             みんなのレビュー
           = link_to ranking_index_path, class: 'dropdown-item' do
             みんなのランキング
+      - if user_signed_in? && current_user.admin?
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            管理者機能
+          .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            = link_to new_product_path, class: 'dropdown-item' do
+              商品登録
+            = link_to reservation_tables_path, class: 'dropdown-item' do
+              予約一覧
     %form.form-inline.my-2.my-lg-0
       %input.form-control.mr-sm-2{"aria-label" => "Search", placeholder: "Search", type: "search"}
       %button.btn.btn-outline-light.my-2.my-sm-0{type: "submit"} Search

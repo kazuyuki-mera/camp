@@ -1,0 +1,27 @@
+.reservation-tables
+  .reservation-tables__search
+    = form_with url: search_reservation_tables_path, method: :get, local: true do |f|
+      .content
+        = f.label :予約日
+        = f.date_field :reservation_date, {value: @reservation_date}
+        = f.submit '検索', class: 'submit btn btn-primary'
+  .reservation-tables__heading
+    = "#{@reservation_date.strftime("%m月%d日")}の予約一覧"
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th{:scope => "col"} 商品名
+        %th{:scope => "col"} 予約開始日
+        %th{:scope => "col"} 予約終了日
+        %th{:scope => "col"} 予約者名
+    %tbody
+      - @reservations.each do |reservation|
+        %tr
+          %th{:scope => "row"}
+            = reservation.product.name
+          %td
+            = reservation.reservation.start_date.strftime("%m月%d日")
+          %td
+            = reservation.reservation.end_date.strftime("%m月%d日")
+          %td
+            = reservation.user.full_name
