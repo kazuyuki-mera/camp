@@ -61,6 +61,6 @@ class ProductsController < ApplicationController
 
     # 管理者判定
     def authenticate_admin
-      redirect_to products_path unless current_user.admin?
+      redirect_to products_path unless user_signed_in? && current_user.admin?
     end
 end
