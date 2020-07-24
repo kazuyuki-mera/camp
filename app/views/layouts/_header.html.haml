@@ -1,13 +1,10 @@
 %nav.navbar.navbar-expand-lg.navbar-dark.bg-success
   = link_to root_path, class: 'navbar-brand red' do
-    camp
+    みんなのキャンプ場
   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
-      %li.nav-item.active
-        .nav-link
-          みんなのキャンプ場
       - if user_signed_in?
         %li.nav-item
           = link_to user_path(current_user), class: 'nav-link' do
