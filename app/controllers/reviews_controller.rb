@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
     def require_login
       unless user_signed_in?
         flash[:notice] = 'レビューを書くには会員登録もしくはログインが必要です。'
-        redirect_to new_user_registration_path # ユーザー新規作成画面
+        redirect_to new_user_session_path # ログイン画面
       end
     end
 end
