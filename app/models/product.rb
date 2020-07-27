@@ -20,4 +20,9 @@ class Product < ApplicationRecord
       0
     end
   end
+
+  def self.search(input)
+    return nil if input == ""
+    Product.where(['name LIKE ?', "%#{input}%"] ).limit(10)
+  end
 end

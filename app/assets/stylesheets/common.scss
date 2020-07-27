@@ -6,3 +6,10 @@
 #alert {
   margin-bottom: 0px;
 }
+
+.results {
+  position: absolute;
+  z-index: 100;
+  right: 0px;
+  width: 35%;
+}

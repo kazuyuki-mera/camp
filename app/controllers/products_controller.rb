@@ -6,6 +6,11 @@ class ProductsController < ApplicationController
     # product_imagesモデルを作成する
     @top_images = ["top1.jpg", "top2.jpg", "top3.jpg", "top4.jpg", "top5.jpg"] #トップページで利用する画像を４枚くらい用意する
     @products = Product.page(params[:page]).per(12).order('created_at DESC')
+    @searchs = Product.search(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   # 新規作成画面
