@@ -4,7 +4,7 @@
       = image_tag "#{image}", alt: "トップイメージ"
 .products
   .products__heading
-    キャンプ場一覧
+    キャンプサイト
   .products__contents
     - @products.each do |product|
       = link_to product_path(product), class: 'card' do
