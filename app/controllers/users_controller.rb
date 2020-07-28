@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     if current_user.id == params[:id].to_i
       @user = User.find(params[:id])
-      @reservations = Reservation.page(params[:page]).per(5).includes(:user).order('created_at DESC')
+      @reservations = Reservation.page(params[:page]).per(5).where(user_id: current_user.id).includes(:user).order('created_at DESC')
     else
       redirect_to products_path
     end
@@ -14,6 +14,6 @@ class UsersController < ApplicationController
 
   # レビュー履歴一覧画面
   def reviews
-    @reviews = Review.page(params[:page]).per(5).where(user_id: params[:id]).includes(:user).order('created_at DESC')
+    @reviews = Review.page(params[:page]).per(5).where(user_id: current_user.id).includes(:user).order('created_at DESC')
   end
 end
