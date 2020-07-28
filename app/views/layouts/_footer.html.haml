@@ -1,0 +1,29 @@
+%footer.bg-success
+  .container
+    .row
+      .col-md-4.col-sm-6.col-xs-12
+        %span.logo minnano-camp
+      .col-md-4.col-sm-6.col-xs-12
+        %ul.menu
+          %span Menu
+          %li
+            = link_to products_path do
+              Home
+          %li
+            = link_to new_contact_path do
+              Contact
+          %li
+            = link_to reviews_path do
+              Review
+          %li
+            = link_to ranking_index_path do
+              Ranking
+      .col-md-4.col-sm-6.col-xs-12
+        %ul.address
+          %span Info
+          %li
+            Phone : 000-0000-00000
+          %li
+            Adress : 東京都1234
+          %li
+            Email : minnano-camp@camp.jp
