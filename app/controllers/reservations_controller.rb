@@ -31,7 +31,7 @@ class ReservationsController < ApplicationController
   # 詳細画面
   def show
     @reservation = Reservation.find(params[:id])
-    if current_user.id == @reservation.user.id
+    if current_user.id != @reservation.user.id
       redirect_to new_user_registration_path
     end
   end
