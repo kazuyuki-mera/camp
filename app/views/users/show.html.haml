@@ -10,16 +10,20 @@
   .user__reservation
     .user__reservation--heading
       予約履歴一覧
-    - @reservations.each do |reservation|
-      .card
-        %h5.card-header
-          = reservation.product.name
-        .card-body
-          %p.card-text
-            予約開始終了日
-          %h5.card-title
-            = reservation.start_end_date
-          = link_to product_reservation_path(reservation.product, reservation), class: 'btn btn-primary' do
-            予約詳細を見る
+    - if @reservations.blank?
+      .user__reservation__blank
+        予約履歴はありません
+    - else
+      - @reservations.each do |reservation|
+        .card
+          %h5.card-header
+            = reservation.product.name
+          .card-body
+            %p.card-text
+              予約開始終了日
+            %h5.card-title
+              = reservation.start_end_date
+            = link_to product_reservation_path(reservation.product, reservation), class: 'btn btn-primary' do
+              予約詳細を見る
     = paginate(@reservations)
 .clear
