@@ -3,7 +3,7 @@
     お問い合わせ一覧
   .contacts__contents
     - @contacts.each do |contact|
-      .card
+      .card.mb-3
         .card-header
           = contact.full_name_kana
           = contact.email
