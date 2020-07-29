@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       get :search
     end
   end
-  resources :contacts
+  resources :contacts, only: [:index, :new, :create]
   resources :users, only: [:show] do
     member do
       get :reviews

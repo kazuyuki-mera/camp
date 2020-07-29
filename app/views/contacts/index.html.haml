@@ -1,0 +1,15 @@
+.contacts
+  .contacts__heading
+    お問い合わせ一覧
+  .contacts__contents
+    - @contacts.each do |contact|
+      .card
+        .card-header
+          = contact.full_name_kana
+          = contact.email
+        .card-body
+          %blockquote.blockquote.mb-0
+            = contact.content
+            -# %footer.blockquote-footer
+            -#   = contact.email
+  = paginate(@contacts)

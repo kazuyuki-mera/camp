@@ -25,6 +25,8 @@
               商品登録
             = link_to reservation_tables_path, class: 'dropdown-item' do
               予約一覧
+            = link_to contacts_path, class: 'dropdown-item' do
+              お問い合わせ一覧
       - if user_signed_in?
         %li.nav-item
           = link_to user_path(current_user), class: 'nav-link' do
