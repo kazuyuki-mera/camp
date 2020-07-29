@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  # 管理者のみアクセス許可
+  before_action :authenticate_admin, only: [:index]
 
   # 一覧画面
   def index
@@ -24,4 +26,15 @@ class ContactsController < ApplicationController
     def contact_params
       params.require(:contact).permit(:name, :name_kana, :email, :content)
     end
+
+    # 管理者判定
+    def authenticate_admin
+      redirect_to products_path unless user_signed_in? && current_user.admin?
+    end
+
+    # 管理者判定
+    def authenticate_admin
+      redirect_to products_path unless user_signed_in? && current_user.admin?
+    end
+
 end
