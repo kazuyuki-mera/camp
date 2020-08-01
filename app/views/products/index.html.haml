@@ -1,7 +1,7 @@
 .slider
-  -# - @top_images.each do |image|
-  -#   .slick-content
-  -#     = image_tag "#{image}", alt: "トップイメージ"
+  - @top_images.each do |image|
+    .slick-content
+      = image_tag "#{image}", alt: "トップイメージ"
 .products
   .products__heading
     キャンプサイト
