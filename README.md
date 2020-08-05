@@ -56,10 +56,6 @@
 **AWSインフラ環境**
 
 - EC2
-  - Nginx
-  - Unicorn
-- Route53
-- ELB
 
 **デプロイ**
 
