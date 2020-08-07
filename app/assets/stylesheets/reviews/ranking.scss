@@ -21,6 +21,11 @@
     a {
       text-decoration: none;
       .card {
+        .no-gutters {
+          img {
+            height: 175px;
+          }
+        }
         margin-bottom: 20px;
         color: black;
         .card-body {
